@@ -11,7 +11,10 @@ const foreCast = (lat, long, callback)=>{
         }else if(body.error){
             callback('unable to find location',undefined)
         }else{
-            callback(undefined, body.current.weather_descriptions[0] + ' with humidity of ' + body.current.humidity +'.It is currently ' + body.current.temperature + ' degree out, and feels like '+ body.current.feelslike + ' degree. There is a ' + body.current.precip + '% chance of rain.')
+            callback(undefined, 
+            body.current.weather_descriptions[0] + ' with humidity of ' + body.current.humidity +'% .It is currently ' +
+            body.current.temperature + ' degree out, and feels like '+ body.current.feelslike + ' degree. There is a ' + 
+            body.current.precip + '% chance of rain. ')
         }
 
     })
